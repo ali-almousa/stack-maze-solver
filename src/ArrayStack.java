@@ -19,10 +19,10 @@ public class ArrayStack<E> extends ArrayDeque<E> {
 	
 	public ArrayStack() {				// The default constructor
 		super();
-		this.capacity = 16;				// Default size limit is 16
+		this.capacity = 16;			// Default size limit is 16
 	}
 	
-	public ArrayStack(int capacity) {	// Parameterized constructor
+	public ArrayStack(int capacity) {		// Parameterized constructor
 		super(capacity);
 		this.capacity = capacity;		// The stack has the given size limit
 	}	

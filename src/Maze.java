@@ -36,7 +36,7 @@ public class Maze {
     private boolean[][] west;       // is there a wall to west of cell i, j
     private boolean[][] visited;    // flag a visited cell
     private boolean done = false;   // general flag
-	private Random rand;            // random number generator
+	private Random rand;        // random number generator
 
 	// The maze constructor
 	// generate a random maze and displays it
@@ -204,9 +204,9 @@ public class Maze {
     			// Valid neighbor is the target (DONE)
     			if (validNeighbor[0] == target[0] && validNeighbor[1] == target[1] ) {
     				Std2Draw.picture(1, n+0.9, "profile.png", 2.5, 2.5);		// Show a picture of the programmer
-    				Std2Draw.setPenColor(Std2Draw.RED);							// Set pen color to red
-    				Std2Draw.text(n-4, n-3, "Success!");						// Write success message
-    				Std2Draw.text(1.1, n-0.2-0.4, "GitHub:");					// Write the GitHub of the programmer
+    				Std2Draw.setPenColor(Std2Draw.RED);				// Set pen color to red
+    				Std2Draw.text(n-4, n-3, "Success!");				// Write success message
+    				Std2Draw.text(1.1, n-0.2-0.4, "GitHub:");			// Write the GitHub of the programmer
     				Std2Draw.text(1.1, n-0.6-0.4, "aloooosh811");				
     				Std2Draw.show();
     				Std2Draw.pause(10);
@@ -215,15 +215,15 @@ public class Maze {
     			}
     			// Valid neighbor is not the target
     			else {
-    				stack.top(validNeighbor);								// Add neighbor to stack
-    				visited[validNeighbor[0]][validNeighbor[1]] = false;	// Flag as visited 
+    				stack.top(validNeighbor);					// Add neighbor to stack
+    				visited[validNeighbor[0]][validNeighbor[1]] = false;		// Flag as visited 
     				markCell(validNeighbor[0], validNeighbor[1]);			// Mark as right cell
     			}
     		}
     		// ----->VALID NEIGHBOR NOT FOUND<-----
     		else {
     			unmarkCell(point[0], point[1]);		// Mark node A as wrong cell
-    			stack.retrieve();					// Remove from stack
+    			stack.retrieve();			// Remove from stack
     		}
     		
     	}
@@ -243,10 +243,10 @@ public class Maze {
      */
     public int[] randomValidNeighbor(int x, int y) {
     	
-    	if(!north[x][y] && visited[x][y+1]) return new int[] {x, y+1};			// North neighbor is not a wall and not visited
-    	else if(!south[x][y] && visited[x][y-1]) return new int[] {x, y-1};		// South neighbor is not a wall and not visited
+    	if(!north[x][y] && visited[x][y+1]) return new int[] {x, y+1};		// North neighbor is not a wall and not visited
+    	else if(!south[x][y] && visited[x][y-1]) return new int[] {x, y-1};	// South neighbor is not a wall and not visited
     	else if(!east[x][y] && visited[x + 1][y]) return new int[] {x + 1, y}; 	// East neighbor is not a wall and not visited
     	else if(!west[x][y] && visited[x - 1][y]) return new int[] {x - 1, y};	// West neighbor is not a wall and not visited
-    	return new int[] {};													// No valid neighbor 
+    	return new int[] {};							// No valid neighbor 
     }
 }

@@ -12,7 +12,7 @@
  *  Execution:    java Maze.java n
  *  Dependencies: Std2Draw.java
  *
- *	@author Ali Mostafa Almousa
+ *	@author Ali Mostafa Almousa (instructor: Dr. Abdulghani M. Al-Qasimi)
  *  @version 3.10 2022/2/22
  *
  ******************************************************************************/
